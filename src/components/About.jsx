@@ -11,7 +11,7 @@ export default function About()
             </p>
             <h1>About Me</h1>
             <div className="bio">
-                <img src="../src/assets/img/ekin.jpg" id="about-img" height="400"/>
+                <img src="/ekin.jpg" id="about-img" height="400" alt="A photo of myself, Ekin Yurekli"/>
                 <p>
                     I have lived in Istanbul, Turkey for 16 years, up until I decided that I want to be part of a bigger and better education system. 
                     I have chosen to finish my high school studies in Harrison Trimble High School, in Moncton, NB, Canada.
