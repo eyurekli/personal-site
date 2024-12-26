@@ -1,0 +1,20 @@
+.bio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 25px;
+    gap: 25px;
+
+    img 
+    {
+        border-radius: 10px; 
+    }    
+}
+.bio-text {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+#landing-content {
+    font-size: 22px;
+}

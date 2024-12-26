@@ -3,3 +3,19 @@ html {
   color: #FFFFFF;
   font-family: "Public Sans";
 }
+body 
+{
+  width: 80vw;
+  margin: 0 auto;
+}
+
+a:link,
+a:visited {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a:hover,
+a:active {
+	text-decoration: underline;
+}

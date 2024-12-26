@@ -1,0 +1,16 @@
+.Header {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Push left and right content to opposite ends */
+    padding: 0 20px; /* Optional: Add horizontal padding for spacing */
+}
+
+.nav-left {
+    display: flex; /* Ensures flexibility if additional items are added */
+    align-items: center; /* Vertically aligns the text */
+}
+
+.page-links {
+    display: flex; /* Aligns the links horizontally */
+    gap: 15px; /* Adds space between the links */
+}
