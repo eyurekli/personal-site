@@ -18,11 +18,12 @@ export default function About()
                 <div className="bio-text">
                     <p>
                         I have lived in Istanbul, Turkey for 16 years, up until I decided that I want to be part of a bigger and better education system. 
-                        I have chosen to finish my high school studies in Harrison Trimble High School, in Moncton, NB, Canada.
+                        I chose to finish my high school studies in Harrison Trimble High School, in Moncton, NB, Canada. 
+                        My interest in coding started after taking a Python course in high school.
                     </p>
                     <p>
                         After graduating from HTHS, I am now on my journey of pursuing a Computer Science degree,
-                        at Dalhousie University in Halifax, NS. Currently completed the Fall term of 2nd year, looking for Co-Op/Internship for Summer 2025.
+                        at Dalhousie University in Halifax, NS. Currently completed the Fall term of 2nd year, looking for a Co-Op/Internship for Summer 2025.
                     </p>
                     <h3>In my free time</h3>
                     <p>
