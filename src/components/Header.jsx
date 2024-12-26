@@ -1,17 +1,23 @@
-export default function Header() {
+export default function Header({ changeComp }) {
+
+    function logSomething() {
+        console.log("Cem Yılmaz")
+    }
+
+
     return (
         <div className="Header">
             <div className="nav-left">
                 <p id="name">Ekin Yurekli</p>
                 <div className="page-links">
                     <p id="nav-content">
-                        <a href="#about-head">About</a>
+                        <a onClick={() => changeComp("About")}>About</a>
                     </p>
                     <p id="nav-content">
-                        <a href="#project-head">Projects</a>
+                        <a onClick={() => changeComp("Projects")}>Projects</a>
                     </p>
                     <p id="nav-content">
-                        <a href="#contact-head">Contact</a>
+                        <a onClick={() => changeComp("Contact")}>Contact</a>
                     </p>
                     <div className="nav-right">
                         <a href="https://github.com/eyurekli">
