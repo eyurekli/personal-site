@@ -7,7 +7,7 @@ export default function About()
         <div>
             <p id="landing-content">
                 <p>Hello there! My name is...</p>
-                <h1>Ekin Yurekli</h1>
+                <h1 id="name">Ekin Yurekli</h1>
                 I am a 2nd year Computer Science student at 
                 <a href="https://www.dal.ca/" id="index-a"> Dalhousie University</a> with 
                  a passion for web development.

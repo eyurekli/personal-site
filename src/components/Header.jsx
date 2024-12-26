@@ -10,7 +10,7 @@ export default function Header({ changeComp }) {
     return (
         <nav className="Header">
             <div className="nav-left">
-                <p id="name">Ekin Yurekli</p>
+                <h2 id="name">Ekin Yurekli</h2>
             </div>
             <input type="checkbox" id="menu-toggle" className="menu-toggle" />
             <label htmlFor="menu-toggle" className="hamburger">

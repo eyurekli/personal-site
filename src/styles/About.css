@@ -52,4 +52,12 @@
     a {
         color: #ACC8E5;
     }
+    a:hover {
+        color: #FFD400;
+    }
+
+}
+
+a:hover {
+    color: #FFD400;
 }
