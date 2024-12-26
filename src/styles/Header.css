@@ -1,16 +1,99 @@
 .Header {
     display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Push left and right content to opposite ends */
-    padding: 0 20px; /* Optional: Add horizontal padding for spacing */
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 20px; 
 }
 
+nav {
+    font-size: 17px;
+}
 .nav-left {
-    display: flex; /* Ensures flexibility if additional items are added */
-    align-items: center; /* Vertically aligns the text */
+    display: flex; 
+    align-items: center; 
 }
 
 .page-links {
-    display: flex; /* Aligns the links horizontally */
-    gap: 15px; /* Adds space between the links */
+    display: flex; 
+    gap: 15px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+i {
+    font-size: 35px;
+    transition:0.2s;
+}
+
+.devicon-linkedin-plain:hover {
+    color:rgb(10, 102, 194);
+}
+
+.devicon-github-plain:hover {
+    color:rgb(110, 84, 148);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 820px) {
+    .page-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgb(30, 35, 45);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .menu-toggle:checked ~ .page-links {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        align-self: center;
+    }
+
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .hamburger .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-right {
+        align-self: center;
+    }
 }

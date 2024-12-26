@@ -8,10 +8,16 @@ export default function Header({ changeComp }) {
 
 
     return (
-        <div className="Header">
+        <nav className="Header">
             <div className="nav-left">
                 <p id="name">Ekin Yurekli</p>
             </div>
+            <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+            <label htmlFor="menu-toggle" className="hamburger">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </label>
             <div className="page-links">
                 <p id="nav-content">
                     <a onClick={() => changeComp("About")}>About</a>
@@ -27,12 +33,11 @@ export default function Header({ changeComp }) {
                         <i className="devicon-github-plain"/>
                     </a>
                     <a href="https://www.linkedin.com/in/ekiny/">
-                        <i className="devicon-linkedin-plain colored"></i>
+                        <i className="devicon-linkedin-plain"></i>
                     </a>
                 </div>
             </div>
-            
-        </div>
+        </nav>
     );
   }
   
