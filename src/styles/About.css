@@ -17,4 +17,7 @@
 
 #landing-content {
     font-size: 22px;
+    a {
+        color: #ACC8E5;
+    }
 }
