@@ -1,4 +1,30 @@
-.bio {
+/* Desktop View */
+@media screen and (min-width: 960px)
+{
+
+    .bio
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+/* Mobile View */
+@media screen and (max-width: 960px)
+{
+    
+    .bio
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+}
+
+
+.bio 
+{
     display: flex;
     align-items: center;
     justify-content: space-between; 

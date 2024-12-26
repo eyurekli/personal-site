@@ -1,3 +1,36 @@
+/* Desktop View */
+@media screen and (min-width: 960px)
+{
+
+    body 
+    {
+        width: 80vw;
+    }
+
+    .pg-main-content
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+/* Mobile View */
+@media screen and (max-width: 960px)
+{
+    body 
+    {
+        width: 90vw;
+    }
+    
+    .pg-main-content
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+}
+
 html {
   background-color: #1f2753;
   color: #FFFFFF;
@@ -5,7 +38,6 @@ html {
 }
 body 
 {
-  width: 80vw;
   margin: 0 auto;
 }
 
