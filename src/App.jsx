@@ -16,7 +16,8 @@ function App() {
   const [comp, setComp] = useState("About")
 
   function changeComp(componentName) {
-    setComp(componentName);
+    if (componentName != comp)
+      setComp(componentName);
   }
 
   return (

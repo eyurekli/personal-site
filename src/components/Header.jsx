@@ -2,11 +2,6 @@ import './../styles/Header.css'
 
 export default function Header({ changeComp }) {
 
-    function logSomething() {
-        console.log("Cem Yılmaz")
-    }
-
-
     return (
         <nav className="Header">
             <div className="nav-left">

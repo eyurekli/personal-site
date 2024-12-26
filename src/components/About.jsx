@@ -5,13 +5,13 @@ export default function About()
 
     return <>
         <div>
-            <p id="landing-content">
+            <div id="landing-content">
                 <p>Hello there! My name is...</p>
                 <h1 id="name">Ekin Yurekli</h1>
                 I am a 2nd year Computer Science student at 
                 <a href="https://www.dal.ca/" id="index-a"> Dalhousie University</a> with 
                  a passion for web development.
-            </p>
+            </div>
             <h1>About Me</h1>
             <div className="bio">
                 <img src="/ekin.jpg" id="about-img" height="400" alt="A photo of myself, Ekin Yurekli"/>
