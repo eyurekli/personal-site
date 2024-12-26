@@ -21,13 +21,16 @@ export default function About()
                         I have chosen to finish my high school studies in Harrison Trimble High School, in Moncton, NB, Canada.
                     </p>
                     <p>
-                        After graduating from HTHS,  I am now on my journey of pursuing a Computer Science degree,
-                        at Dalhousie University in Halifax, NS. Lets get connected!
+                        After graduating from HTHS, I am now on my journey of pursuing a Computer Science degree,
+                        at Dalhousie University in Halifax, NS. Currently completed the Fall term of 2nd year.
                     </p>
+                    <h3>In my free time</h3>
                     <p>
-                        In my free time:
-                        I play games. Sonic and Ace Attorney are some of my favourite series.
-                        I do sports. I'm a big fan of Fenerbahçe from my hometown Istanbul.
+                        I play a lot of games. Sonic and Ace Attorney are my favourite series.
+                        I used to be crazy about Model United Nations. I helped revive and run the DalMUN Society in 23/24.
+                        I love doing sports to stay active. I like going to the gym, I'm a active member of the Dal Run Club.
+                        I occasionally join the Dal Football Club, though I like Basketball as a sport more.
+                        I'm a big fan of Fenerbahçe from my hometown Istanbul.
                     </p>
                 </div>
             </div>
