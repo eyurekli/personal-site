@@ -1,4 +1,5 @@
 import './../styles/Contact.css'
+import sonic from "/sonic_thumbsup.png";
 
 
 export default function Contact()
@@ -21,6 +22,7 @@ export default function Contact()
                             <i className="devicon-linkedin-plain"></i>
                 </a>
             </nav>
+            <img src={sonic} id="sonic-image"></img>
         </nav>
     )
 }
