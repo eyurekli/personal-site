@@ -1,14 +1,23 @@
-export default function Project({title, img, desc, link})
+export default function Project({title, img, desc, link, demo_link})
 {
     return (
         <div className="project">
             <img src={img}></img>
             <h3>{title}</h3>
             <p>{desc}</p>
-            <button>
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                    View
-                </a></button>
+
+            <nav className="button-links">
+                <button id="repo-button">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        View
+                    </a>
+                </button>
+                <button id="demo-button">
+                    <a href={demo_link} target="_blank" rel="noopener noreferrer">
+                        Demo
+                    </a>
+                </button>
+            </nav>
         </div>
     )
 }

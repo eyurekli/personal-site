@@ -3,7 +3,7 @@
 {
 
     .project p {
-        width: 550px;
+        width: 500px;
     }
 
     .project img {
@@ -12,10 +12,11 @@
         height: auto;
     }
 
-    #projects {
+    .projects {
         display: flex;
         align-items: center;
-        justify-content: center;
+        align-content: space-between;
+        justify-content: space-evenly;
         gap: 20px;
     }
 }
@@ -33,7 +34,7 @@
         width: 300px;
     }
 
-    #projects {
+    .projects {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,6 +48,19 @@
     border-radius: 5px; 
     color: #FFFFFF;
     width: 50px;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
+}
+
+.button-links {
+    display: flex;
+    gap:5px;
+}
+
+#demo-button {
+    background-color: rgb(147, 43, 43);
+}
+
+#repo-button {
+    background-color: #646cff;
 }
