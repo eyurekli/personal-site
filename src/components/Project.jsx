@@ -7,16 +7,21 @@ export default function Project({title, img, desc, link, demo_link})
             <p>{desc}</p>
 
             <nav className="button-links">
+
                 <button id="repo-button">
                     <a href={link} target="_blank" rel="noopener noreferrer">
                         View
                     </a>
                 </button>
-                <button id="demo-button">
-                    <a href={demo_link} target="_blank" rel="noopener noreferrer">
-                        Demo
-                    </a>
-                </button>
+
+                {demo_link && (
+                    <button id="demo-button">
+                        <a href={demo_link} target="_blank" rel="noopener noreferrer">
+                            Demo
+                        </a>
+                    </button>
+                )}
+                
             </nav>
         </div>
     )
