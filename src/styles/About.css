@@ -8,6 +8,17 @@
         justify-content: space-between;
     }
 
+    #landing-content
+    {
+        height: 200px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
 }
 /* Mobile View */
 @media screen and (max-width: 960px)
@@ -23,7 +34,7 @@
     img {
         width: 100%;
         max-width: 300px; 
-        height: auto; /
+        height: auto;
     }
 
 }
@@ -40,7 +51,7 @@
     img 
     {
         border-radius: 10px; 
-    }    
+    }
 }
 .bio-text {
     font-size: 20px;
@@ -48,6 +59,7 @@
 }
 
 #landing-content {
+
     font-size: 22px;
     a {
         color: #ACC8E5;
