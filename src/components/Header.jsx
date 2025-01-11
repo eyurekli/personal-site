@@ -1,6 +1,7 @@
 import './../styles/Header.css'
+import { Link } from 'react-scroll';
 
-export default function Header({ changeComp }) {
+export default function Header() {
 
     return (
         <nav className="Header">
@@ -15,13 +16,19 @@ export default function Header({ changeComp }) {
             </label>
             <div className="page-links">
                 <p id="nav-content">
-                    <a onClick={() => changeComp("About")}>About</a>
+                    <Link to="About" smooth={true} duration={500}>
+                        About
+                    </Link>
                 </p>
                 <p id="nav-content">
-                    <a onClick={() => changeComp("Projects")}>Projects</a>
+                    <Link to="project-nav" smooth={true} duration={500}>
+                        Projects
+                    </Link>
                 </p>
                 <p id="nav-content">
-                    <a onClick={() => changeComp("Contact")}>Contact</a>
+                    <Link to="Contact" smooth={true} duration={500}>
+                        Contact
+                    </Link>
                 </p>
                 <div className="nav-right">
                     <a href="https://github.com/eyurekli">

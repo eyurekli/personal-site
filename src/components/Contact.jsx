@@ -5,7 +5,7 @@ import sonic from "/sonic_thumbsup.png";
 export default function Contact()
 {
     return (
-        <nav className="contact">
+        <nav id="Contact">
             <h1>Get in Touch With Me</h1>
 
             <p>{`

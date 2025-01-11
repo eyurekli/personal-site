@@ -7,24 +7,13 @@ import Projects from "./components/Projects"
 
 function App() {
 
-  const components = {
-    About: <About/>,
-    Contact: <Contact/>,
-    Projects: <Projects/>
-  };
-
-  const [comp, setComp] = useState("About")
-
-  function changeComp(componentName) {
-    if (componentName != comp)
-      setComp(componentName);
-  }
-
   return (
     <>
-      <Header changeComp={changeComp}/>
+      <Header/>
       <hr id="hr-line"></hr>
-      {components[comp]}
+      <About/>
+      <Projects id="Projects"/>
+      <Contact id="Contact"/>
     </>
   )
 }

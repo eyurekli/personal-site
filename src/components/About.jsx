@@ -4,7 +4,7 @@ export default function About()
 {
 
     return <>
-        <div>
+        <div id="About">
             <div id="landing-content">
                 <p>Hello there! My name is...</p>
                 <h1 id="name">Ekin Yurekli</h1>
