@@ -83,7 +83,7 @@ export default function EmeraldGame()
             {collectedEmeralds.length > 0 && 
                 <div>
                     <p>Collected: {collectedEmeralds.length} / 7</p>
-                    <p>Turn Off/Lower Volume If You Don't Want a Sound Effect</p>
+                    <p>Turn Off/Lower Volume to Avoid a Sound Effect</p>
                     {emeraldTable}
                 </div>
             }
