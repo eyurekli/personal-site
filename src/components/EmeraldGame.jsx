@@ -80,13 +80,14 @@ export default function EmeraldGame()
 
     return (
         <div id="emerald-game">
-            {collectedEmeralds.length > 0 && 
-                <div>
-                    <p>Collected: {collectedEmeralds.length} / 7</p>
-                    <p>Turn Off/Lower Volume to Avoid a Sound Effect</p>
-                    {emeraldTable}
-                </div>
-            }
+            
+            <div>
+                <p>Search For the Seven Chaos Emeralds...</p>
+                <p>Collected: {collectedEmeralds.length} / 7</p>
+                <p>Turn Off/Lower Volume to Avoid a Sound Effect</p>
+                {emeraldTable}
+            </div>
+            
             {gameCompleted ?  (
                 <div className="victory-message">
                 <h2>You collected all 7 Chaos Emeralds!</h2>
