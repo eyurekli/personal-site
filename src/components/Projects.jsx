@@ -49,8 +49,8 @@ export default function Projects()
                 A Tic-Tac-Toe game built with React. Two players can change their names, the player moves are also logged
                 into a list.
             `,
-            link: "https://github.com/eyurekli/DIOsWorld",
-            demo: "https://youtu.be/PY2PL7b7VRo"
+            link: "https://github.com/eyurekli/tic-tac-toe-project",
+            demo: "https://tic-tac-toe-project-delta-flame.vercel.app/"
         }
     ];
 
