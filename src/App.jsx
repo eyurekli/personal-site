@@ -19,7 +19,7 @@ function App() {
     <>
       <Header/>
       <About/>
-      <button onClick={toggleGameVisibility}>
+      <button onClick={toggleGameVisibility} id="emerald-game-button">
         {showGame ? 'Hide Emerald Game' : 'Want To Play a Little Game?'}
       </button>
       {showGame && <EmeraldGame />}
