@@ -9,6 +9,8 @@ export default function EmeraldGame()
 
     const all_seven_audio = new Audio('/sounds/all_seven.mp3');
 
+    all_seven_audio.volume = 0.15;
+
     const emeraldColors = [
         'red', 'blue', 'green', 'yellow', 'cyan', 'purple', 'white'
     ];
@@ -86,7 +88,7 @@ export default function EmeraldGame()
             }
             {gameCompleted ?  (
                 <div className="victory-message">
-                <h2>You've collected all 7 Chaos Emeralds!</h2>
+                <h2>You collected all 7 Chaos Emeralds!</h2>
                 </div>
             ) : (
                 currentEmerald && (
