@@ -1,5 +1,7 @@
 import ChaosEmerald from "./ChaosEmerald";
 import { useState, useEffect } from 'react';
+import './../styles/EmeraldGame.css'
+
 
 export default function EmeraldGame()
 {
@@ -46,9 +48,9 @@ export default function EmeraldGame()
     }, []);
 
     const emeraldTable = (
-        <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+        <div id="emerald-table">
             {collectedEmeralds.map((color) => (
-                <div>
+                <div className="emerald-image">
                   <img 
                       src={`/emeralds/emerald_${color}.png`}
                       style={{
@@ -58,26 +60,25 @@ export default function EmeraldGame()
                   />
               </div>
             ))}
-            {emeraldColors.filter(color => !collectedEmeralds.includes(color)).map((color, index) => (
-            <div>
-                <img 
-                      src={"/emeralds/emerald_gray.png"}
-                      style={{
-                        width: '75px'
-                    }}
-                      alt={`${color} Chaos Emerald`} 
-                  />
-            </div>
-        ))}
+            {emeraldColors.filter(color => !collectedEmeralds.includes(color)).map((color) => (
+                <div className="emerald-image">
+                    <img 
+                        src={"/emeralds/emerald_gray.png"}
+                        alt={`${color} Chaos Emerald`} 
+                    />
+                </div>
+            ))}
         </div>
     );
 
     return (
         <div id="emerald-game">
-            {collectedEmeralds.length > 0 && <div>
+            {collectedEmeralds.length > 0 && 
+                <div>
                     <p>Collected: {collectedEmeralds.length} / 7</p>
                     {emeraldTable}
-                </div>}
+                </div>
+            }
             {gameCompleted ? (
                 <div className="victory-message">
                 <h2>You've collected all the Chaos Emeralds!</h2>
@@ -85,10 +86,7 @@ export default function EmeraldGame()
                 </div>
             ) : (
                 currentEmerald && (
-                <ChaosEmerald
-                    color={currentEmerald}
-                    onClick={handleEmeraldClick}
-                />
+                    <ChaosEmerald color={currentEmerald} onClick={handleEmeraldClick}/>
                 )
             )}
         </div>
