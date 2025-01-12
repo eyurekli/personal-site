@@ -3,8 +3,12 @@ import { useState, useEffect } from 'react';
 import './../styles/EmeraldGame.css'
 
 
+
 export default function EmeraldGame()
 {
+
+    const all_seven_audio = new Audio('/sounds/all_seven.mp3');
+
     const emeraldColors = [
         'red', 'blue', 'green', 'yellow', 'cyan', 'purple', 'white'
     ];
@@ -18,6 +22,7 @@ export default function EmeraldGame()
         setCollectedEmeralds((prev) => [...prev, currentEmerald]);
         if (collectedEmeralds.length + 1 === 7) 
         {
+            all_seven_audio.play()
             setGameCompleted(true);
             setCurrentEmerald(null);
         } else 
@@ -79,7 +84,7 @@ export default function EmeraldGame()
                     {emeraldTable}
                 </div>
             }
-            {gameCompleted ? (
+            {gameCompleted ?  (
                 <div className="victory-message">
                 <h2>You've collected all 7 Chaos Emeralds!</h2>
                 </div>
