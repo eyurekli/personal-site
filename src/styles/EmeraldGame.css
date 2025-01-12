@@ -9,6 +9,17 @@
     gap: 10px ;
 }
 
+@media screen and (max-width: 960px)
+{
+    #emerald-table { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 emeralds per row */
+        gap: 10px;
+        width: 100%; /* Ensure it fits the screen */
+        justify-content: center; /* Center the grid */
+    }
+}
+
 
 /* Chaos Emeralds */
 

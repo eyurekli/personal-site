@@ -81,8 +81,7 @@ export default function EmeraldGame()
             }
             {gameCompleted ? (
                 <div className="victory-message">
-                <h2>You've collected all the Chaos Emeralds!</h2>
-                <p>Now you're Super Sonic!</p>
+                <h2>You've collected all 7 Chaos Emeralds!</h2>
                 </div>
             ) : (
                 currentEmerald && (
