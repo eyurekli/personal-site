@@ -22,7 +22,7 @@ export default function EmeraldGame()
         {
             setCurrentEmerald(null); // Temporarily hide emerald
             setTimeout(() => {
-                setCurrentEmerald(getNextEmerald());
+                setCurrentEmerald(getNextEmerald(remainingEmeralds));
             }, 1000); // Delay before next emerald appears
         }
     };
@@ -31,9 +31,7 @@ export default function EmeraldGame()
 
         const randomColor = remainingEmeralds[Math.floor(Math.random() * remainingEmeralds.length)];
         removeEmerald(randomColor);
-        console.log("Removing Emerald...");
-        console.log(remainingEmeralds);
-        return remainingEmeralds[Math.floor(Math.random() * remainingEmeralds.length)];
+        return randomColor;
     };
 
     const removeEmerald = (colorToRemove) => {
@@ -47,9 +45,39 @@ export default function EmeraldGame()
         }
     }, []);
 
+    const emeraldTable = (
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+            {collectedEmeralds.map((color) => (
+                <div>
+                  <img 
+                      src={`/emeralds/emerald_${color}.png`}
+                      style={{
+                        width: '75px'
+                    }}
+                      alt={`${color} Chaos Emerald`} 
+                  />
+              </div>
+            ))}
+            {emeraldColors.filter(color => !collectedEmeralds.includes(color)).map((color, index) => (
+            <div>
+                <img 
+                      src={"/emeralds/emerald_gray.png"}
+                      style={{
+                        width: '75px'
+                    }}
+                      alt={`${color} Chaos Emerald`} 
+                  />
+            </div>
+        ))}
+        </div>
+    );
+
     return (
         <div id="emerald-game">
-            {collectedEmeralds.length > 0 && <p>Collected: {collectedEmeralds.length} / 7</p>}
+            {collectedEmeralds.length > 0 && <div>
+                    <p>Collected: {collectedEmeralds.length} / 7</p>
+                    {emeraldTable}
+                </div>}
             {gameCompleted ? (
                 <div className="victory-message">
                 <h2>You've collected all the Chaos Emeralds!</h2>
