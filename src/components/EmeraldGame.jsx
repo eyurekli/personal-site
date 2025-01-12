@@ -9,7 +9,7 @@ export default function EmeraldGame()
 
     const all_seven_audio = new Audio('/sounds/all_seven.mp3');
 
-    all_seven_audio.volume = 0.05;
+    all_seven_audio.volume = 0.01;
 
     const emeraldColors = [
         'red', 'blue', 'green', 'yellow', 'cyan', 'purple', 'white'
@@ -83,6 +83,7 @@ export default function EmeraldGame()
             {collectedEmeralds.length > 0 && 
                 <div>
                     <p>Collected: {collectedEmeralds.length} / 7</p>
+                    <p>Turn Off/Lower Volume If You Don't Want a Sound Effect</p>
                     {emeraldTable}
                 </div>
             }
