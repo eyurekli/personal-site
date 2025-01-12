@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <Header/>
-      <hr id="hr-line"></hr>
       <EmeraldGame/>
       <About/>
       <Projects id="Projects"/>
