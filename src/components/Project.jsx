@@ -10,7 +10,7 @@ export default function Project({title, img, desc, link, demo_link})
 
                 <button id="repo-button">
                     <a href={link} target="_blank" rel="noopener noreferrer">
-                        View
+                        Source
                     </a>
                 </button>
 
