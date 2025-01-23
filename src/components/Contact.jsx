@@ -23,6 +23,8 @@ export default function Contact()
                 </a>
             </nav>
             <img src={sonic} id="sonic-image"></img>
+
+            <p>Styling inspired by <a href="https://benstrickland.ca">benstrickland.ca</a>! Check out his awesome work as well.</p>
         </nav>
     )
 }
