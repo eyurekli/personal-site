@@ -51,10 +51,11 @@
     background-color: #1f2753;
     border-radius: 5px; 
     color: #FFFFFF;
-    width: 60px;
-    height: 30px;
     font-size: 18px;
-    text-decoration: none;
+    font-family: Roboto;
+    a:link, a:visited {
+        text-decoration: none;
+    }
 }
 
 .button-links {
