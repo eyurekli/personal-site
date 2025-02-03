@@ -18,6 +18,7 @@ export default function Projects()
                 Secured 1st place at the ShiftKey GenAI Mental Well-being Hackathon.
             `,
             link: "https://github.com/eyurekli/shiftkey-mental-2025",
+            demo: "https://youtu.be/1pBWY5ndZpI?feature=shared"
         },
         {
             title: "Natural Disaster Tracker",
