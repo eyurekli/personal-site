@@ -1,13 +1,13 @@
 /* Desktop View */
 @media screen and (min-width: 960px) {
     .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+        display: flex; /* Use flexbox for centering */
+        flex-wrap: wrap; /* Ensure responsiveness */
+        justify-content: space-around; /* Centers horizontally */
         gap: 20px;
-        justify-content: center;
-        align-items: start;
         padding: 20px;
     }
+    
 
     .project {
         display: flex;
@@ -41,13 +41,13 @@
 /* Mobile View */
 @media screen and (max-width: 960px) {
     .projects {
-        display: grid;
-        grid-template-columns: 1fr; /* One column layout */
-        gap: 15px;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
+        display: flex; /* Use flexbox for centering */
+        flex-wrap: wrap; /* Ensure responsiveness */
+        justify-content: center; /* Centers horizontally */
+        gap: 20px;
+        padding: 20px;
     }
+    
 
     .project {
         width: 90%;
