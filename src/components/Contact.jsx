@@ -15,10 +15,10 @@ export default function Contact()
 
             <p><strong>Email:</strong> <a href="mailto:ekin.y@dal.ca">ekin.y@dal.ca</a></p>
             <nav className="icons">
-                <a href="https://github.com/eyurekli">
+                <a target="_blank" href="https://github.com/eyurekli">
                             <i className="devicon-github-plain"/>
                         </a>
-                <a href="https://www.linkedin.com/in/ekiny/">
+                <a target="_blank" href="https://www.linkedin.com/in/ekiny/">
                             <i className="devicon-linkedin-plain"></i>
                 </a>
             </nav>

@@ -50,10 +50,10 @@ export default function Header() {
                         </Link>
                     </p>
                     <div className="nav-right">
-                        <a href="https://github.com/eyurekli">
+                        <a target="_blank" href="https://github.com/eyurekli">
                             <i className="devicon-github-plain"/>
                         </a>
-                        <a href="https://www.linkedin.com/in/ekiny/">
+                        <a target="_blank" href="https://www.linkedin.com/in/ekiny/">
                             <i className="devicon-linkedin-plain"></i>
                         </a>
                     </div>
