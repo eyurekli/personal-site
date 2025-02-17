@@ -62,9 +62,7 @@ a:visited {
 	color: #FFFFFF;
 }
 
-a:hover,
-a:active {
-}
+
 
 header {
   position: sticky;
@@ -88,6 +86,7 @@ button {
   font-size: 18px;
   background-color: #FFFF00;
   padding: 8px 12px;
+  font-family: "Roboto";
 }
 
 button a {
