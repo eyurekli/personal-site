@@ -3,7 +3,7 @@ export default function Project({title, img, desc, link, demo_link})
     return (
         <div className="project">
             <img src={img}></img>
-            <h3>{title}</h3>
+            <h3 id="name">{title}</h3>
             <p>{desc}</p>
 
             <nav className="button-links">

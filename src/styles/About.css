@@ -39,19 +39,27 @@
 
 }
 
+#name {
+    max-width: fit-content;
+}
+
 
 .bio 
 {
+    border: solid black;
     display: flex;
     align-items: center;
     justify-content: space-between; 
     padding: 0 25px;
     gap: 25px;
+    background-color: #102066;
+    color: #FFFFFF;
 
     img 
     {
         border-radius: 10px; 
     }
+    
 }
 .bio-text {
     font-size: 20px;
@@ -65,11 +73,11 @@
         color: #ACC8E5;
     }
     a:hover {
-        color: #FFD400;
+        color: #FFFF00;
     }
 
 }
 
 a:hover {
-    color: #FFD400;
+    color: #FFFF00;
 }

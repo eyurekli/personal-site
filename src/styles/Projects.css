@@ -1,79 +1,98 @@
 /* Desktop View */
-@media screen and (min-width: 960px)
-{
+@media screen and (min-width: 960px) {
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+        gap: 20px;
+        justify-content: center;
+        align-items: start;
+        padding: 20px;
+    }
 
-    .project p {
-        width: 500px;
-        font-size: 16px;
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        width: 500px; /* Ensure consistent width */
+        height: 450px; /* Ensure consistent height */
     }
 
     .project img {
         width: 100%;
-        max-width: 500px; 
+        max-width: 400px;
         height: auto;
-    }
-
-    .projects {
-        display: flex;
-        align-items: center;
-        align-content: space-between;
-        justify-content: space-evenly;
-        gap: 20px;
-        height: 500px;
-    }
-}
-/* Mobile View */
-@media screen and (max-width: 960px)
-{
-    
-    img {
-        width: 100%;
-        max-width: 300px; 
-        height: auto; /
+        object-fit: cover; /* Ensure images are aligned properly */
     }
 
     .project p {
-        width: 300px;
+        width: 100%;
         font-size: 16px;
     }
 
-    .projects {
+    .button-links {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        height: 800px;
+        gap: 10px;
+        justify-content: center;
     }
 }
 
+/* Mobile View */
+@media screen and (max-width: 960px) {
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr; /* One column layout */
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .project {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .project img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .project p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .button-links {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+}
+
+.project {
+    border: solid black 5px;
+    background-color: #102066;
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+}
 
 .project button {
-    background-color: #1f2753;
-    border-radius: 5px; 
-    color: #FFFFFF;
+    border-radius: 5px;
+    border-width: 2px;
     font-size: 18px;
-    font-family: Roboto;
-    a:link, a:visited {
-        text-decoration: none;
-    }
+    background-color: #FFFF00;
+    padding: 8px 12px;
 }
 
-.button-links {
-    display: flex;
-    gap:5px;
-}
-
-#demo-button {
-    background-color: rgb(147, 43, 43);
-}
-
-#repo-button {
-    background-color: #646cff;
-}
-
-#project-nav
-{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.project button a {
+    text-decoration: none;
+    color: #102066;
 }

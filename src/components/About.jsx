@@ -1,4 +1,5 @@
-import './../styles/About.css'
+import './../styles/About.css';
+import "/img/banner/banner-iumun.jpg";
 
 export default function About() 
 {
@@ -6,13 +7,11 @@ export default function About()
     return <>
         <div id="About">
             <div id="landing-content">
-                <p>Hello there! My name is...</p>
+                <p>Hello! My name is</p>
                 <h1 id="name">Ekin Yurekli</h1>
-                I am a 2nd year Computer Science student at 
-                <a href="https://www.dal.ca/" id="index-a"> Dalhousie University</a> with 
-                 a passion for web development.
+                <p>I am a 2nd year Computer Science student at Dalhousie University with a passion for web development.</p>
             </div>
-            <h1>About Me</h1>
+            <h1 className="bg-white-name">About Me</h1>
             <div className="bio">
                 <img src="/ekin.jpg" id="about-img" height="400" alt="A photo of myself, Ekin Yurekli"/>
                 <div className="bio-text">

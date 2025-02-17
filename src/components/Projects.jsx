@@ -69,7 +69,7 @@ export default function Projects()
 
     return (
         <nav id="project-nav">
-            <h1>Projects</h1>
+            <h1 className="bg-white-name">Projects</h1>
             <div className="projects">
                 {projects0.map((project, index) => (
                     <Project

@@ -6,7 +6,7 @@ export default function Contact()
 {
     return (
         <nav id="Contact">
-            <h1>Get in Touch With Me</h1>
+            <h1 id="name">Get in Touch With Me</h1>
 
             <p>{`
                 I am currently searching for Co-Op/Internship Opportunities for Summer 2025.
@@ -22,9 +22,8 @@ export default function Contact()
                             <i className="devicon-linkedin-plain"></i>
                 </a>
             </nav>
-            <img src={sonic} id="sonic-image"></img>
+            {/* <img src={sonic} id="sonic-image"></img> */ }
 
-            <p>Styling inspired by <a href="https://benstrickland.ca">benstrickland.ca</a>! Check out his awesome work as well.</p>
         </nav>
     )
 }

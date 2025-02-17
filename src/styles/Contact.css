@@ -3,25 +3,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #102066;
+    color: #FFFFFF;
+    padding: 1em;
+}
 
-    h1 {
-        font-size: 30px;
-    }
 
-    p {
-        font-size: 20px;
-        text-align: center;
-        width: 100%;
-        max-width: 800px;
-    }
+
+#Contact h1 {
+    font-size: 30px;
+}
+
+#Contact p {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 .icons {
     display: flex;
     gap: 10px;
-    a {
-        text-decoration: none;
-    } 
+}
+
+.icons a {
+    text-decoration: none;
 }
 
 #sonic-image {

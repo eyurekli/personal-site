@@ -5,6 +5,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import EmeraldGame from "./components/EmeraldGame";
+import Footer from "./components/Footer";
 
 function App() {
 

@@ -59,7 +59,7 @@ export default function Header() {
                     </div>
                 </div>
             </nav>
-            <hr id="hr-line"></hr>
+            {/*<hr id="hr-line"></hr>*/}
         </header>
     );
   }
