@@ -7,7 +7,6 @@ export default function Footer()
         <nav id="Contact">
 
             <p>{`
-                I am currently searching for Co-Op/Internship Opportunities for Summer 2025.
                 I respond to emails by at most 2-3 days. Feel free to reach out!
             `}</p>
 

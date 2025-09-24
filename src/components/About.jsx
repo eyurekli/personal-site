@@ -9,7 +9,7 @@ export default function About()
             <div id="landing-content">
                 <p>Hello! My name is</p>
                 <h1 id="name">Ekin Yurekli</h1>
-                <p>I am a 2nd year Computer Science student at Dalhousie University with a passion for web development.</p>
+                <p>I am a Computer Science student at Dalhousie University with a passion for web development.</p>
             </div>
             <h1 className="bg-white-name">About Me</h1>
             <div className="bio">
@@ -22,7 +22,7 @@ export default function About()
                     </p>
                     <p>
                         After graduating from HTHS, I am now on my journey of pursuing a Computer Science degree,
-                        at Dalhousie University in Halifax, NS. Currently completed the Fall term of 2nd year, looking for a Co-Op/Internship for Summer 2025.
+                        at Dalhousie University in Halifax, NS. I am currently doing an 8-month Co-Op at Trench Canada, in Toronto, as an AI/ML Intern.
                     </p>
                     <h3>In my free time</h3>
                     <p>
