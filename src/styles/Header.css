@@ -1,21 +1,32 @@
+/* Header Component Styles - Using Design System Variables */
+
 .Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 var(--header-padding);
 
     p {
-        color: #FFFFFF;
+        color: var(--color-text-light);
     }
 }
 
 .Header #name {
     padding: 0;
+    color: var(--color-text-light);
+    font-size: var(--heading-h3-size);
+    font-weight: var(--heading-h3-weight);
+}
+
+[data-theme="dark"] .Header #name {
+    color: var(--color-accent); /* Gold in dark mode */
 }
 
 nav {
-    font-size: 17px;
+    font-size: var(--link-text-size);
+    font-family: var(--font-primary);
 }
+
 .nav-left {
     display: flex; 
     align-items: center; 
@@ -23,61 +34,182 @@ nav {
 
 .page-links {
     display: flex; 
-    gap: 15px;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+/* Navigation Links Styling */
+.page-links p {
+    margin: 0;
+}
+
+.page-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: var(--link-text-weight);
+    font-size: var(--link-text-size);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-all);
+    display: inline-block;
+    position: relative;
+}
+
+[data-theme="dark"] .page-links a {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+.page-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition-all);
+    transform: translateX(-50%);
+}
+
+.page-links a:hover {
+    color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .page-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-links a:hover::after {
+    width: 80%;
+}
+
+.page-links a:active {
+    color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(0);
+}
+
+[data-theme="dark"] .page-links a:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.page-links a:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
 }
 
 .nav-right {
     display: flex;
-    gap: 10px;
+    gap: var(--spacing-sm);
     align-items: center;
     justify-content: space-between;
-    a {
-        text-decoration: none;
+}
+
+.nav-right a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-all);
+}
+
+.nav-right a:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* Social Media Icons */
+i {
+    font-size: 2.1875rem; /* 35px - keeping specific icon size for Devicon consistency */
+    color: var(--color-text-light); /* White icons on dark header background */
+    transition: var(--transition-color);
+}
+
+.nav-right a:hover i {
+    transform: scale(var(--hover-scale)) translateY(-2px);
+    transition: var(--transition-transform);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-right a:hover i {
+        transform: none;
     }
 }
 
-i {
-    font-size: 35px;
-    transition:0.2s;
-}
-
 .devicon-linkedin-plain:hover {
-    color:rgb(10, 102, 194);
+    color: rgb(10, 102, 194); /* LinkedIn brand color - keeping for brand consistency */
 }
 
 .devicon-github-plain:hover {
-    color:rgb(110, 84, 148);
+    color: rgb(110, 84, 148); /* GitHub brand color - keeping for brand consistency */
 }
 
+/* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-all);
+}
+
+.hamburger:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .bar {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
-    background-color: white;
-    transition: all 0.3s ease-in-out;
+    margin: var(--spacing-xs) auto;
+    background-color: var(--color-text-light);
+    transition: var(--transition-transform);
+    border-radius: var(--radius-sm);
 }
 
 .menu-toggle {
     display: none;
 }
 
-@media screen and (max-width: 820px) {
+/* Mobile Menu Styles - Using design system breakpoint */
+@media screen and (max-width: 767px) {
     .page-links {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: var(--header-height);
         flex-direction: column;
-        background-color: rgb(30, 35, 45);
+        background-color: rgba(30, 35, 45, 0.98); /* Dark menu background with slight transparency */
+        backdrop-filter: blur(10px);
         width: 100%;
-        height: 100%;
+        height: calc(100vh - var(--header-height));
         text-align: center;
-        transition: 0.3s;
+        transition: left var(--transition-smooth), opacity var(--transition-normal);
+        opacity: 0;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    [data-theme="dark"] .page-links {
+        background-color: rgba(10, 10, 10, 0.98); /* Darker menu background in dark mode */
+        gap: var(--spacing-lg);
+        z-index: var(--z-modal);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .menu-toggle:checked ~ .page-links {
+        opacity: 1;
     }
 
     .menu-toggle:checked ~ .page-links {
@@ -90,8 +222,10 @@ i {
         align-self: center;
     }
 
+    /* Hamburger animation to X */
     .menu-toggle:checked ~ .hamburger .bar:nth-child(2) {
         opacity: 0;
+        transform: scale(0);
     }
 
     .menu-toggle:checked ~ .hamburger .bar:nth-child(1) {
@@ -102,7 +236,67 @@ i {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Mobile navigation links */
+    .page-links a {
+        width: 100%;
+        padding: var(--spacing-md);
+        font-size: var(--font-size-lg);
+        border-bottom: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+    }
+
+    .page-links a:last-of-type {
+        border-bottom: none;
+    }
+
     .nav-right {
         align-self: center;
+        margin-top: var(--spacing-lg);
+        gap: var(--spacing-md);
     }
+
+    .nav-right a {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Accessibility: Keyboard navigation support */
+.menu-toggle:focus,
+.menu-toggle:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.hamburger:focus-visible,
+.page-links a:focus-visible,
+.nav-right a:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .page-links a {
+        transition: var(--transition-color);
+    }
+    
+    .page-links a:hover {
+        transform: none;
+    }
+    
+    .page-links a::after {
+        display: none;
+    }
+    
+    .bar {
+        transition: none;
+    }
+    
+    .menu-toggle:checked ~ .hamburger .bar {
+        transition: var(--transition-fast);
+    }
+}
+
+/* Ensure header background uses design system variable */
+header {
+    background-color: var(--color-bg-header);
 }

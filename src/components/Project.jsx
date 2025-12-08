@@ -1,28 +1,44 @@
+import Button from "./Button.jsx";
+
 export default function Project({title, img, desc, link, demo_link})
 {
     return (
-        <div className="project">
-            <img src={img}></img>
+        <article className="project" aria-label={`Project: ${title}`}>
+            <img 
+                src={img} 
+                alt={`${title} project screenshot`} 
+                loading="lazy"
+                width="600"
+                height="400"
+            />
             <h3 id="name">{title}</h3>
             <p>{desc}</p>
 
             <nav className="button-links">
 
-                <button id="repo-button">
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                <Button
+                    variant="primary"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ariaLabel={`View source code for ${title}`}
+                >
                         Source
-                    </a>
-                </button>
+                </Button>
 
                 {demo_link && (
-                    <button id="demo-button">
-                        <a href={demo_link} target="_blank" rel="noopener noreferrer">
+                    <Button
+                        variant="primary"
+                        href={demo_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel={`View demo for ${title}`}
+                    >
                             Demo
-                        </a>
-                    </button>
+                    </Button>
                 )}
                 
             </nav>
-        </div>
+        </article>
     )
 }

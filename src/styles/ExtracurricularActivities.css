@@ -1,0 +1,697 @@
+/* Extracurricular Activities Section - Using Design System Variables */
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   SECTION CONTAINER
+   ============================================ */
+
+.extracurricular-section {
+    padding: var(--section-padding-mobile) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .extracurricular-section {
+        padding: var(--section-padding-tablet) var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .extracurricular-section {
+        padding: var(--section-padding-desktop) var(--spacing-xl);
+    }
+}
+
+/* ============================================
+   SECTION HEADING & INTRO
+   ============================================ */
+
+.section-heading {
+    font-size: var(--heading-h2-size);
+    font-weight: var(--heading-h2-weight);
+    line-height: var(--heading-h2-line-height);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+[data-theme="dark"] .section-heading {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+.section-intro {
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   ACTIVITY CARD
+   ============================================ */
+
+.activity-card {
+    background-color: var(--color-bg-primary);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: var(--transition-all);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.activity-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .activity-card:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   ACTIVITY IMAGE CONTAINER
+   ============================================ */
+
+.activity-image-container {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    min-height: 300px;
+    background-color: var(--color-neutral-light);
+    overflow: hidden;
+}
+
+.activity-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.activity-icon-overlay {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.activity-icon {
+    font-size: 2rem;
+    color: var(--color-text-light);
+}
+
+.activity-icon-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-neutral-light);
+}
+
+[data-theme="dark"] .activity-icon-fallback {
+    background-color: var(--color-bg-primary); /* Black background for icon fallback in dark mode */
+}
+
+.activity-icon-large {
+    font-size: 4rem;
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
+   ACTIVITY CONTENT
+   ============================================ */
+
+.activity-content {
+    padding: var(--card-padding);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    background-color: var(--color-bg-primary);
+}
+
+[data-theme="dark"] .activity-content {
+    background-color: var(--color-primary); /* Dark blue background in dark mode */
+}
+
+.activity-title {
+    font-size: var(--heading-h3-size);
+    font-weight: var(--heading-h3-weight);
+    line-height: var(--heading-h3-line-height);
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+[data-theme="dark"] .activity-title {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+.activity-organization {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.activity-role {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-style: italic;
+}
+
+.activity-dates {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.activity-description {
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-md) 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    min-height: 0;
+}
+
+.activity-link {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-color);
+    align-self: flex-start;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.activity-link:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+.activity-link:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================
+   GRID LAYOUT (DESKTOP)
+   ============================================ */
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activities-grid .activity-card {
+    width: 100%;
+    max-width: 500px;
+    min-height: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   CAROUSEL LAYOUT (TABLET/MOBILE)
+   ============================================ */
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.activities-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+    .activities-carousel {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .activities-carousel::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
+
+.carousel-container {
+    display: flex;
+    width: 100%;
+    will-change: transform;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-container {
+        width: auto;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .carousel-container > * {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-slide {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
+
+.carousel-slide .activity-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 450px;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   CAROUSEL CONTROLS
+   ============================================ */
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 5;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.carousel-arrow {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-all);
+    pointer-events: all;
+    box-shadow: var(--shadow-md);
+    margin: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--color-link-hover);
+    transform: scale(1.1);
+}
+
+.carousel-arrow:active {
+    transform: scale(0.95);
+}
+
+.carousel-arrow:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.carousel-arrow-left {
+    margin-left: var(--spacing-xs);
+}
+
+.carousel-arrow-right {
+    margin-right: var(--spacing-xs);
+}
+
+/* ============================================
+   CAROUSEL DOTS
+   ============================================ */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+    transition: var(--transition-all);
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background-color: var(--color-primary);
+    opacity: 0.7;
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary);
+}
+
+.carousel-dot:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================
+   CAROUSEL PAUSE TOGGLE
+   ============================================ */
+
+.carousel-pause-toggle {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-md);
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-all);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-wrapper {
+        position: relative;
+        padding-bottom: 60px; /* Space for pause button */
+    }
+
+    .activities-carousel {
+        position: relative;
+    }
+
+    .carousel-dots {
+        display: none; /* Hide dots on mobile */
+    }
+
+    .carousel-pause-toggle {
+        position: absolute;
+        bottom: var(--spacing-md);
+        right: var(--spacing-sm);
+        z-index: 20;
+        pointer-events: all;
+    }
+}
+
+.carousel-pause-toggle:hover {
+    background-color: var(--color-link-hover);
+    transform: scale(1.1);
+}
+
+.carousel-pause-toggle:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================
+   CAROUSEL ANNOUNCEMENT (SCREEN READER)
+   ============================================ */
+
+.carousel-announcement {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .carousel-slide .activity-card {
+        min-height: 500px;
+    }
+
+    .activity-image-container {
+        min-height: 300px;
+    }
+}
+
+/* Mobile (< 768px) */
+@media screen and (max-width: 767px) {
+    .extracurricular-section {
+        padding: var(--section-padding-mobile) var(--spacing-sm);
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .activities-carousel {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-slide {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-slide .activity-card {
+        min-height: 450px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .activity-image-container {
+        min-height: 250px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .activity-content {
+        padding: var(--spacing-md);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 0;
+    }
+
+    .activity-title,
+    .activity-organization,
+    .activity-role,
+    .activity-dates,
+    .activity-description {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .activity-description {
+        flex-shrink: 1;
+        min-height: 0;
+    }
+
+    .activity-link {
+        flex-shrink: 0;
+        margin-top: auto;
+        white-space: nowrap;
+    }
+
+    .activity-icon-overlay {
+        width: 50px;
+        height: 50px;
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    .activity-icon {
+        font-size: 1.5rem;
+    }
+
+    .activity-icon-large {
+        font-size: 3rem;
+    }
+
+    .carousel-controls {
+        display: none; /* Hide arrow buttons on mobile */
+    }
+
+    .carousel-slide .activity-card {
+        z-index: 1;
+    }
+
+    .carousel-pause-toggle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        font-size: 1rem;
+        bottom: var(--spacing-md);
+        right: var(--spacing-sm);
+    }
+
+    .carousel-dots {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md) var(--spacing-sm);
+        box-sizing: border-box;
+    }
+}
+
+/* Desktop (≥ 1024px) - Grid Layout */
+@media screen and (min-width: 1024px) {
+    .activities-grid .activity-card {
+        min-height: 700px;
+    }
+
+    .activity-image-container {
+        min-height: 400px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-container {
+        transition: none;
+    }
+
+    .activity-card {
+        transition: box-shadow var(--transition-fast);
+    }
+
+    .activity-card:hover {
+        transform: none;
+    }
+}
+
+/* Focus indicators */
+.activity-card:focus-within {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+

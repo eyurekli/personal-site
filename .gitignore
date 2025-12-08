@@ -24,3 +24,7 @@ test.html
 *.njsproj
 *.sln
 *.sw?
+
+.bmad-core
+.cursor
+docs

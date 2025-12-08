@@ -1,87 +1,433 @@
-/* Desktop View */
-@media screen and (min-width: 960px)
-{
+/* About Section Styles - Using Design System Variables */
 
-    .bio
-    {
-        display: flex;
-        justify-content: space-between;
-    }
+/* ============================================
+   SECTION CONTAINER
+   ============================================ */
 
-    #landing-content
-    {
-        height: 200px;
-    }
-
-    img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-    }
-
-}
-/* Mobile View */
-@media screen and (max-width: 960px)
-{
-    
-    .bio
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    img {
-        width: 100%;
-        max-width: 300px; 
-        height: auto;
-    }
-
+#About {
+    padding: var(--section-padding-mobile) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
 }
 
-#name {
-    max-width: fit-content;
+@media (min-width: 768px) {
+    #About {
+        padding: var(--section-padding-tablet) var(--spacing-lg);
+    }
 }
 
+@media (min-width: 1024px) {
+    #About {
+        padding: var(--section-padding-desktop) var(--spacing-xl);
+    }
+}
 
-.bio 
-{
-    border: solid black;
+/* ============================================
+   LANDING CONTENT (Hero Section) - Aurora Gradient Flow
+   ============================================ */
+
+#landing-content.aurora-hero {
+    position: relative;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    padding: 0 25px;
-    gap: 25px;
-    background-color: #102066;
-    color: #FFFFFF;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
 
-    img 
-    {
-        border-radius: 10px; 
+/* Aurora Background Layer 1 - Blue to Subtle Yellow Gradient */
+.aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        #102066 0%,
+        #1e3a8a 25%,
+        #2563eb 50%,
+        #3b82f6 65%,
+        #4a90e2 75%,
+        #5aa3d0 85%,
+        #102066 100%
+    );
+    background-size: 200% 200%;
+    animation: auroraShift 30s ease-in-out infinite;
+    will-change: background-position;
+}
+
+/* Dark Mode Aurora Gradient */
+[data-theme="dark"] .aurora-bg {
+    background: linear-gradient(
+        135deg,
+        #0A0A0A 0%,
+        #1a1a2e 20%,
+        #16213e 40%,
+        #0f3460 60%,
+        #102066 80%,
+        #1a1a2e 100%
+    );
+}
+
+/* Aurora Background Layer 2 - Subtle Overlay (Simplified) */
+.aurora-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 70% 50%, rgba(30, 58, 138, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Dark Mode Aurora Overlay */
+[data-theme="dark"] .aurora-overlay {
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 70% 50%, rgba(16, 32, 102, 0.2) 0%, transparent 60%);
+    opacity: 0.4;
+}
+
+/* Aurora Animations - Optimized */
+@keyframes auroraShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Main Content Wrapper */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+/* Typography - Space Grotesk + Inter */
+
+/* Greeting Text */
+.hero-greeting {
+    font-family: 'Inter', var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 0.6s ease-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Name - Large, Bold, Soft Yellow */
+.hero-name {
+    font-family: 'Space Grotesk', var(--font-primary);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFD700; /* Softer gold/yellow instead of bright yellow */
+    margin: var(--spacing-lg) 0 var(--spacing-xl) 0;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    position: relative;
+    text-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .hero-name {
+    text-shadow: 
+        0 0 20px rgba(212, 175, 55, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Profile Photo Wrapper */
+.hero-photo-wrapper {
+    margin: var(--spacing-2xl) 0;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Profile Photo - Clean, No Rotation */
+.hero-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 215, 0, 0.3); /* Softer gold border */
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .hero-photo {
+    border: 3px solid rgba(212, 175, 55, 0.4); /* Dark gold border in dark mode */
+    box-shadow: 
+        0 0 20px rgba(212, 175, 55, 0.3),
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 30px rgba(255, 215, 0, 0.3),
+        0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .hero-photo:hover {
+    box-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.4),
+        0 25px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* Tagline */
+.hero-tagline {
+    font-family: 'Inter', var(--font-primary);
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: var(--spacing-lg);
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.8s both;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 767px) {
+    #landing-content.aurora-hero {
+        min-height: 75vh;
+        padding: var(--spacing-xl) var(--spacing-md);
     }
     
+    .hero-content-wrapper {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    
+    .hero-name {
+        font-size: 3rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.125rem;
+    }
+    
+    .hero-photo {
+        width: 200px;
+        height: 200px;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-name {
+        font-size: 4rem;
+    }
+    
+    .hero-photo {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .aurora-bg {
+        animation: none;
+        background-position: 50% 50%;
+    }
+    
+    .hero-greeting,
+    .hero-name,
+    .hero-photo-wrapper,
+    .hero-tagline {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .hero-photo:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   SECTION HEADING
+   ============================================ */
+
+.bg-white-name {
+    font-size: var(--heading-h2-size);
+    font-weight: var(--heading-h2-weight);
+    line-height: var(--heading-h2-line-height);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+[data-theme="dark"] .bg-white-name {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+/* ============================================
+   BIO SECTION
+   ============================================ */
+
+.bio {
+    border: var(--border-width-medium) solid var(--color-border-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    gap: var(--spacing-xl);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    margin: 0 auto var(--spacing-xl) auto;
+    max-width: 900px; /* Make the bio panel horizontally shorter */
+}
+
+/* Profile Image */
+#about-img {
+    border-radius: var(--radius-lg);
+    border: var(--border-width-medium) solid var(--color-border-light);
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 400px; /* Increased from 350px to 400px */
+    height: auto;
+    aspect-ratio: 5 / 4; /* Maintain aspect ratio to prevent layout shift */
+    object-fit: cover;
+    transition: var(--transition-shadow);
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+#about-img:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Bio Text */
 .bio-text {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-light);
+    flex: 1;
 }
 
-#landing-content {
+.bio-text p {
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-relaxed);
+}
 
-    font-size: 22px;
-    a {
-        color: #ACC8E5;
+.bio-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+.bio-text h3 {
+    color: var(--color-text-light);
+    font-size: var(--heading-h3-size);
+    font-weight: var(--heading-h3-weight);
+    line-height: var(--heading-h3-line-height);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================
+   
+   Breakpoints match design system:
+   - Mobile: < 768px
+   - Tablet: 768px - 1023px
+   - Desktop: >= 1024px
+   */
+
+/* Mobile View (< 768px) */
+@media screen and (max-width: 767px) {
+    .bio {
+        flex-direction: column;
+        padding: var(--spacing-lg) var(--spacing-md);
+        gap: var(--spacing-lg);
     }
-    a:hover {
-        color: #FFFF00;
+
+    #about-img {
+        max-width: 100%;
+        width: 100%;
     }
 
 }
 
-a:hover {
-    color: #FFFF00;
+/* Tablet View (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .bio {
+        flex-direction: column;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        gap: var(--spacing-xl);
+    }
+
+    #about-img {
+        max-width: 400px;
+    }
 }
 
-h3 {
-    color: white;
+/* Desktop View (>= 1024px) */
+@media screen and (min-width: 1024px) {
+    .bio {
+        flex-direction: row;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        gap: var(--spacing-xl);
+    }
+
+    #about-img {
+        max-width: 400px; /* Increased to 400px */
+        flex-shrink: 0;
+    }
+
+    .bio-text {
+        flex: 1;
+    }
 }
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+#about-img {
+    alt: "A photo of myself, Ekin Yurekli"; /* Descriptive alt text already in component */
+}
+
+/* Ensure proper color contrast */
+.bio-text {
+    color: var(--color-text-light); /* White text on dark blue background - good contrast */
+}
+

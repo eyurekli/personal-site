@@ -1,73 +1,390 @@
-.emerald-image img {
-    width: 75px;
-}
+/* Emerald Game Component - Using Design System Variables */
 
+/* ============================================
+   GAME CONTAINER
+   ============================================ */
 
-#emerald-table { 
+#emerald-game {
     display: flex;
-    flex-direction:  row;
-    gap: 10px ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    padding: var(--section-padding-mobile) var(--spacing-md);
+    margin: var(--spacing-xl) auto;
+    max-width: var(--max-width-container);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    min-height: 400px;
+    position: relative;
 }
 
-@media screen and (max-width: 960px)
-{
-    #emerald-table { 
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 emeralds per row */
-        gap: 10px;
-        width: 100%; /* Ensure it fits the screen */
-        justify-content: center; /* Center the grid */
+@media (min-width: 768px) {
+    #emerald-game {
+        padding: var(--section-padding-tablet) var(--spacing-lg);
     }
 }
 
+@media (min-width: 1024px) {
+    #emerald-game {
+        padding: var(--section-padding-desktop) var(--spacing-xl);
+    }
+}
 
-/* Chaos Emeralds */
+/* ============================================
+   GAME CONTENT
+   ============================================ */
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: 100%;
+    text-align: center;
+}
+
+/* ============================================
+   GAME INSTRUCTIONS & TEXT
+   ============================================ */
+
+.game-content p {
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.game-instructions {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.game-counter {
+    font-size: var(--heading-h4-size);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent) !important; /* Ensure yellow text is visible on dark blue background */
+    background-color: var(--color-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.game-warning {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* ============================================
+   AUDIO CONTROLS
+   ============================================ */
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: var(--spacing-md) 0;
+}
+
+.mute-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: var(--border-width-medium) solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    transition: var(--transition-all);
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mute-button:hover {
+    background-color: var(--color-link-hover);
+    transform: scale(var(--hover-scale));
+    box-shadow: var(--shadow-md);
+}
+
+.mute-button:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.mute-button:active {
+    transform: scale(var(--active-scale));
+}
+
+.volume-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+    max-width: 200px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: var(--radius-sm);
+    background: var(--color-border);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    cursor: pointer;
+    border: var(--border-width-thin) solid var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-all);
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-md);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    cursor: pointer;
+    border: var(--border-width-thin) solid var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-all);
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-md);
+}
+
+.volume-slider:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.volume-value {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    min-width: 40px;
+    text-align: right;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   EMERALD TABLE / DISPLAY
+   ============================================ */
+
+#emerald-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: var(--spacing-md) 0;
+    max-width: 100%;
+}
+
+.emerald-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-transform);
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    min-height: 75px;
+    background-color: transparent; /* Prevent alt text from showing through */
+}
+
+.emerald-image img {
+    width: 75px;
+    height: 75px;
+    aspect-ratio: 1 / 1; /* Square aspect ratio to prevent layout shift */
+    object-fit: contain;
+    transition: var(--transition-all);
+    display: block; /* Prevent inline spacing issues */
+}
+
+.emerald-image:hover {
+    transform: scale(var(--hover-scale));
+}
+
+@media screen and (max-width: 767px) {
+    #emerald-table {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .emerald-image img {
+        width: 60px;
+        height: 60px;
+        height: 60px;
+    }
+}
+
+/* ============================================
+   VICTORY MESSAGE
+   ============================================ */
+
+.victory-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn var(--transition-smooth);
+}
+
+.victory-message h2 {
+    font-size: var(--heading-h2-size);
+    font-weight: var(--heading-h2-weight);
+    line-height: var(--heading-h2-line-height);
+    color: var(--color-text-light);
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   CHAOS EMERALD (FLOATING)
+   ============================================ */
 
 .chaos-emerald {
     width: 75px;
     height: 75px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1000;
-    transform: translate(-50%, -50%);
+    /* top and left will be set inline for random starting positions */
+    z-index: var(--z-dropdown);
+    transform: translate(-50%, -50%); /* Center the emerald on its position */
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: var(--transition-transform), var(--transition-shadow);
+    will-change: transform, top, left;
 }
 
 .chaos-emerald:hover {
-    transform: scale(1.1); /* Slightly enlarge the image */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Highlight effect */
+    transform: translate(-50%, -50%) scale(var(--hover-scale));
+    filter: drop-shadow(0 0 15px var(--color-accent));
+    box-shadow: var(--shadow-lg);
 }
 
-  
-  /* Floating animations */
-  @keyframes float {
+.chaos-emerald:active {
+    transform: translate(-50%, -50%) scale(var(--active-scale));
+}
+
+.chaos-emerald .emerald-image {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-full);
+}
+
+.chaos-emerald img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1; /* Square aspect ratio to prevent layout shift */
+    object-fit: contain;
+    border-radius: var(--radius-full);
+    display: block; /* Prevent inline spacing issues */
+}
+
+/* ============================================
+   FLOATING ANIMATIONS
+   ============================================ */
+
+@keyframes float {
     0%, 100% {
-      transform: translate(-50%, -50%) translateY(-10px);
+        transform: translate(-50%, -50%) translateY(-10px);
     }
     50% {
-      transform: translate(-50%, -50%) translateY(10px);
+        transform: translate(-50%, -50%) translateY(10px);
     }
-  }
-  
-  /* Horizontal movement */
-  @keyframes moveX {
+}
+
+@keyframes moveX {
     0%, 100% {
-      left: 20%;
+        left: var(--start-left, 50%);
     }
     50% {
-      left: 80%;
+        left: var(--end-left, 50%);
     }
-  }
-  
-  /* Vertical movement */
-  @keyframes moveY {
+}
+
+@keyframes moveY {
     0%, 100% {
-      top: 20%;
+        top: var(--start-top, 50%);
     }
     50% {
-      top: 80%;
+        top: var(--end-top, 50%);
     }
-  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .chaos-emerald {
+        animation: none !important;
+    }
+    
+    .victory-message {
+        animation: none !important;
+    }
+    
+    .emerald-image:hover {
+        transform: none;
+    }
+}

@@ -1,19 +1,54 @@
 import './../styles/About.css';
 import "/img/banner/banner-iumun.jpg";
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function About() 
 {
+    const aboutRef = useScrollAnimation({ animationClass: 'fade-in' });
+    const bioRef = useScrollAnimation({ animationClass: 'slide-up', rootMargin: '0px 0px -100px 0px' });
 
     return <>
-        <div id="About">
-            <div id="landing-content">
-                <p>Hello! My name is</p>
-                <h1 id="name">Ekin Yurekli</h1>
-                <p>I am a Computer Science student at Dalhousie University with a passion for web development.</p>
+        <section id="About" ref={aboutRef} aria-label="About section">
+            <div id="landing-content" className="aurora-hero">
+                {/* Aurora Gradient Background Layers */}
+                <div className="aurora-bg"></div>
+                <div className="aurora-overlay"></div>
+                
+                {/* Main Content Container */}
+                <div className="hero-content-wrapper">
+                    <p className="hero-greeting">Hello! My name is</p>
+                    
+                    <h1 id="name" className="hero-name">
+                        Ekin Yurekli
+                    </h1>
+                    
+                    {/* Profile Photo - Clean, No Rotation */}
+                    <div className="hero-photo-wrapper">
+                        <img 
+                            src="/ekin.jpg" 
+                            alt="Ekin Yurekli" 
+                            className="hero-photo"
+                            width="250"
+                            height="250"
+                            loading="eager"
+                        />
+                    </div>
+                    
+                    <p className="hero-tagline">
+                        I am a Computer Science student at Dalhousie University with a passion for AI/ML, and data-driven development.
+                    </p>
+                </div>
             </div>
-            <h1 className="bg-white-name">About Me</h1>
-            <div className="bio">
-                <img src="/ekin.jpg" id="about-img" height="400" alt="A photo of myself, Ekin Yurekli"/>
+            <h2 className="bg-white-name">About Me</h2>
+            <div className="bio" ref={bioRef}>
+                <img 
+                    src="/ekin.jpg" 
+                    id="about-img" 
+                    width="400" 
+                    height="320" 
+                    alt="A photo of myself, Ekin Yurekli"
+                    loading="lazy"
+                />
                 <div className="bio-text">
                     <p>
                         I have lived in Istanbul, Turkey for 16 years, up until I decided that I want to be part of a bigger and better education system. 
@@ -33,6 +68,6 @@ export default function About()
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     </>
 }

@@ -6,9 +6,59 @@ import conquest from "/img/projects/conquest.png";
 
 import Project from "./Project.jsx";
 import './../styles/Projects.css';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useEffect, useRef } from 'react';
 
 export default function Projects()
 {
+    const projectsRef = useScrollAnimation({ animationClass: 'fade-in' });
+    const projects0Ref = useRef(null);
+    const projects1Ref = useRef(null);
+    const projects2Ref = useRef(null);
+
+    // Add visible class to project containers when they scroll into view
+    useEffect(() => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        const checkAndAnimate = (ref) => {
+            if (!ref.current) return;
+            const rect = ref.current.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isVisible || prefersReducedMotion) {
+                ref.current.classList.add('visible');
+                ref.current.classList.add('animated');
+            }
+        };
+
+        // Check immediately for elements already in viewport
+        [projects0Ref, projects1Ref, projects2Ref].forEach(checkAndAnimate);
+
+        if (prefersReducedMotion) {
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        entry.target.classList.add('animated');
+                    }
+                });
+            },
+            { rootMargin: '0px 0px -100px 0px', threshold: 0.1 }
+        );
+
+        [projects0Ref, projects1Ref, projects2Ref].forEach(ref => {
+            if (ref.current) observer.observe(ref.current);
+        });
+
+        return () => {
+            [projects0Ref, projects1Ref, projects2Ref].forEach(ref => {
+                if (ref.current) observer.unobserve(ref.current);
+            });
+        };
+    }, []);
     const projects0 = [
         {
             title: "ConQuest",
@@ -68,9 +118,9 @@ export default function Projects()
     ];
 
     return (
-        <nav id="project-nav">
-            <h1 className="bg-white-name">Projects</h1>
-            <div className="projects">
+        <section id="project-nav" ref={projectsRef} aria-label="Projects section">
+            <h2 className="bg-white-name">Projects</h2>
+            <div className="projects" ref={projects0Ref}>
                 {projects0.map((project, index) => (
                     <Project
                         key={index}
@@ -83,7 +133,7 @@ export default function Projects()
                 ))}
             </div>
 
-            <div className="projects">
+            <div className="projects" ref={projects1Ref}>
                 {projects1.map((project, index) => (
                     <Project
                         key={index}
@@ -95,7 +145,7 @@ export default function Projects()
                     />
                 ))}
             </div>
-            <div className="projects">
+            <div className="projects" ref={projects2Ref}>
                 {projects2.map((project, index) => (
                     <Project
                         key={index}
@@ -107,6 +157,6 @@ export default function Projects()
                     />
                 ))}
             </div>
-        </nav>
+        </section>
     )
 }

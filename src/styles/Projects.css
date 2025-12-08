@@ -1,99 +1,220 @@
-/* Desktop View */
-@media screen and (min-width: 960px) {
-    .projects {
-        display: flex; /* Use flexbox for centering */
-        flex-wrap: wrap; /* Ensure responsiveness */
-        justify-content: space-around; /* Centers horizontally */
-        gap: 20px;
-        padding: 20px;
-    }
-    
+/* Projects Showcase - Enhanced with Design System */
 
+/* Section Container */
+#project-nav {
+    padding: var(--section-padding-mobile) var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    #project-nav {
+        padding: var(--section-padding-tablet) var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    #project-nav {
+        padding: var(--section-padding-desktop) var(--spacing-xl);
+    }
+}
+
+/* Section Heading */
+#project-nav .bg-white-name {
+    font-size: var(--heading-h2-size);
+    font-weight: var(--heading-h2-weight);
+    line-height: var(--heading-h2-line-height);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+}
+
+[data-theme="dark"] #project-nav .bg-white-name {
+    color: var(--color-accent); /* Gold in dark mode */
+    text-align: center;
+}
+
+/* Projects Container */
+.projects {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default (mobile) */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+    
+/* Project Card Base Styles */
     .project {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px;
-        width: 500px; /* Ensure consistent width */
-        height: 450px; /* Ensure consistent height */
+    padding: var(--card-padding);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: var(--border-width-medium) solid var(--color-border-dark);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-all);
+    min-height: var(--card-min-height);
+}
+
+/* Staggered animation for project cards - only hide if container needs animation */
+.projects:not(.visible):not(.animated) .project {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.projects .project:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.projects .project:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.projects .project:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.projects .project:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* When projects container is visible, animate cards */
+.projects.visible .project,
+.projects.animated .project {
+    animation: slideUp var(--transition-smooth) ease-out forwards;
+}
+
+/* Project Card Hover Effects */
+.project:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .projects.visible .project,
+    .projects.fade-in .project {
+        animation: none;
+    }
+    
+    .project:hover {
+        transform: none;
+    }
+}
+
+/* Project Image */
+    .project img {
+        width: 100%;
+    max-width: 100%;
+        height: auto;
+    aspect-ratio: 3 / 2; /* Maintain 3:2 aspect ratio to prevent layout shift */
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-transform);
+}
+
+.project:hover img {
+    transform: scale(1.02);
+}
+
+/* Project Title */
+.project h3 {
+    font-size: var(--heading-h3-size);
+    font-weight: var(--heading-h3-weight);
+    line-height: var(--heading-h3-line-height);
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.project h3#name {
+    color: var(--color-text-light);
+}
+
+/* Project Description */
+    .project p {
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-lg) 0;
+        width: 100%;
+    flex-grow: 1;
+    }
+
+/* Button Links Container - Buttons now use Button component */
+    .button-links {
+        display: flex;
+    gap: var(--spacing-md);
+        justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Desktop View */
+@media screen and (min-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xl);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 500px;
+        min-height: 450px;
     }
 
     .project img {
-        width: 100%;
         max-width: 400px;
-        height: auto;
-        object-fit: cover; /* Ensure images are aligned properly */
+    }
+}
+
+/* Tablet View */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
     }
 
-    .project p {
+    .project {
         width: 100%;
-        font-size: 16px;
-    }
-
-    .button-links {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
+        max-width: 450px;
     }
 }
 
 /* Mobile View */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 767px) {
     .projects {
-        display: flex; /* Use flexbox for centering */
-        flex-wrap: wrap; /* Ensure responsiveness */
-        justify-content: center; /* Centers horizontally */
-        gap: 20px;
-        padding: 20px;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
     }
-    
 
     .project {
         width: 90%;
         max-width: 350px;
-        height: auto;
-        padding: 15px;
-        text-align: center;
     }
 
     .project img {
-        width: 100%;
         max-width: 300px;
-        height: auto;
-        object-fit: cover;
-    }
-
-    .project p {
-        width: 100%;
-        font-size: 16px;
     }
 
     .button-links {
-        display: flex;
-        gap: 5px;
-        justify-content: center;
-    }
+        gap: var(--spacing-sm);
 }
-
-.project {
-    border: solid black 5px;
-    background-color: #102066;
-    color: #FFFFFF;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.project button {
-    border-radius: 5px;
-    border-width: 2px;
-    font-size: 18px;
-    background-color: #FFFF00;
-    padding: 8px 12px;
-}
-
-.project button a {
-    text-decoration: none;
-    color: #102066;
 }
 

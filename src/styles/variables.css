@@ -1,0 +1,490 @@
+/**
+ * Design System Variables
+ * 
+ * This file contains all design tokens for the Personal Website.
+ * Import this file in App.jsx or main.jsx to make variables available globally.
+ * 
+ * Usage: var(--color-primary) or var(--spacing-md)
+ */
+
+/* ============================================
+   COLOR PALETTE
+   ============================================ */
+
+/* Brand Colors */
+:root {
+  --color-primary: #102066;        /* Main brand color - dark blue */
+  --color-accent: #FFFF00;          /* Accent color - yellow */
+  
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;      /* Main page background */
+  --color-bg-secondary: #F8F9FA;    /* Secondary backgrounds, card backgrounds */
+  --color-bg-header: #102066;       /* Header background */
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A;    /* Main body text, headings */
+  --color-text-secondary: #666666;  /* Secondary text, descriptions */
+  --color-text-light: #FFFFFF;      /* Text on dark backgrounds */
+  --color-text-muted: #999999;      /* Muted text, placeholders */
+  
+  /* Border Colors */
+  --color-border: #E0E0E0;         /* Borders, dividers */
+  --color-border-light: #F0F0F0;    /* Light borders */
+  --color-border-dark: #CCCCCC;    /* Dark borders */
+  
+  /* Semantic Colors */
+  --color-success: #4CAF50;        /* Success messages, positive feedback */
+  --color-warning: #FF9800;        /* Warnings, important notices */
+  --color-error: #F44336;          /* Errors, destructive actions */
+  --color-info: #2196F3;           /* Informational messages */
+  
+  /* Neutral Colors */
+  --color-neutral-light: #F5F5F5;  /* Light backgrounds, subtle highlights */
+  --color-neutral-medium: #E0E0E0;  /* Medium neutral */
+  --color-neutral-dark: #424242;   /* Dark text on light backgrounds */
+  
+  /* Interactive States */
+  --color-link: #102066;            /* Link color */
+  --color-link-hover: #0d1a52;      /* Link hover (darker primary) */
+  --color-link-active: #0a153d;     /* Link active state */
+  --color-focus: #2196F3;           /* Focus outline color */
+  
+  /* Button Colors */
+  --color-button-primary-bg: #FFFF00;      /* Primary button background */
+  --color-button-primary-text: #102066;    /* Primary button text */
+  --color-button-primary-hover: #E6E600;   /* Primary button hover */
+  --color-button-primary-active: #CCCC00;  /* Primary button active */
+  
+  --color-button-secondary-bg: #F8F9FA;    /* Secondary button background */
+  --color-button-secondary-text: #102066;   /* Secondary button text */
+  --color-button-secondary-hover: #E9ECEF; /* Secondary button hover */
+  --color-button-secondary-active: #DEE2E6; /* Secondary button active */
+}
+
+/* ============================================
+   DARK MODE COLOR PALETTE
+   ============================================ */
+
+[data-theme="dark"] {
+  --color-primary: #102066;        /* Main brand color - dark blue (same as light) */
+  --color-accent: #D4AF37;        /* Accent color - dark gold */
+  
+  /* Background Colors */
+  --color-bg-primary: #1E1E1E;    /* Main page background - lighter black */
+  --color-bg-secondary: #1A1A1A;  /* Secondary backgrounds, card backgrounds - dark gray */
+  --color-bg-header: #102066;     /* Header background - dark blue (same as light) */
+  
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;   /* Main body text, headings - white */
+  --color-text-secondary: #CCCCCC; /* Secondary text, descriptions - light gray */
+  --color-text-light: #FFFFFF;     /* Text on dark backgrounds - white */
+  --color-text-muted: #999999;     /* Muted text, placeholders - gray */
+  
+  /* Border Colors */
+  --color-border: #333333;         /* Borders, dividers - dark gray */
+  --color-border-light: #2A2A2A;   /* Light borders - darker gray */
+  --color-border-dark: #444444;   /* Dark borders - medium gray */
+  
+  /* Semantic Colors */
+  --color-success: #4CAF50;       /* Success messages - same as light */
+  --color-warning: #FF9800;       /* Warnings - same as light */
+  --color-error: #F44336;         /* Errors - same as light */
+  --color-info: #2196F3;          /* Informational messages - same as light */
+  
+  /* Neutral Colors */
+  --color-neutral-light: #1A1A1A;  /* Light backgrounds - dark gray */
+  --color-neutral-medium: #2A2A2A; /* Medium neutral - darker gray */
+  --color-neutral-dark: #CCCCCC;   /* Dark text on light backgrounds - light gray */
+  
+  /* Interactive States */
+  --color-link: #D4AF37;           /* Link color - dark gold */
+  --color-link-hover: #E5C158;     /* Link hover - lighter gold */
+  --color-link-active: #B8860B;    /* Link active state - darker gold */
+  --color-focus: #D4AF37;          /* Focus outline color - dark gold */
+  
+  /* Button Colors */
+  --color-button-primary-bg: #D4AF37;      /* Primary button background - dark gold */
+  --color-button-primary-text: #000000;    /* Primary button text - black for better contrast on gold */
+  --color-button-primary-hover: #E5C158;    /* Primary button hover - lighter gold */
+  --color-button-primary-active: #B8860B;  /* Primary button active - darker gold */
+  
+  --color-button-secondary-bg: #1A1A1A;    /* Secondary button background - dark gray */
+  --color-button-secondary-text: #FFFFFF;  /* Secondary button text - white */
+  --color-button-secondary-hover: #2A2A2A; /* Secondary button hover - darker gray */
+  --color-button-secondary-active: #333333; /* Secondary button active - medium gray */
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+:root {
+  /* Font Families */
+  --font-primary: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-secondary: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px - Fine print, captions */
+  --font-size-sm: 0.875rem;     /* 14px - Small text, metadata */
+  --font-size-base: 1rem;       /* 16px - Body text, default */
+  --font-size-lg: 1.125rem;     /* 18px - Emphasized body text */
+  --font-size-xl: 1.5rem;       /* 24px - Minor headings */
+  --font-size-2xl: 1.75rem;     /* 28px - Project titles, subsection headings */
+  --font-size-3xl: 2.25rem;     /* 36px - Section headings */
+  --font-size-4xl: 3rem;         /* 48px - Main page title, hero name */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;     /* Regular body text */
+  --font-weight-medium: 500;     /* Buttons, links */
+  --font-weight-semibold: 600;   /* Headings */
+  --font-weight-bold: 700;       /* Hero text, emphasis */
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;      /* Headings */
+  --line-height-normal: 1.5;     /* Buttons, small text */
+  --line-height-relaxed: 1.6;    /* Body text */
+  --line-height-loose: 1.8;      /* Long-form content */
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  
+  /* Typography Scale (for headings) */
+  --heading-h1-size: var(--font-size-4xl);
+  --heading-h1-weight: var(--font-weight-bold);
+  --heading-h1-line-height: var(--line-height-tight);
+  
+  --heading-h2-size: var(--font-size-3xl);
+  --heading-h2-weight: var(--font-weight-semibold);
+  --heading-h2-line-height: var(--line-height-tight);
+  
+  --heading-h3-size: var(--font-size-2xl);
+  --heading-h3-weight: var(--font-weight-semibold);
+  --heading-h3-line-height: var(--line-height-normal);
+  
+  --heading-h4-size: var(--font-size-xl);
+  --heading-h4-weight: var(--font-weight-medium);
+  --heading-h4-line-height: var(--line-height-normal);
+  
+  /* Body Text */
+  --body-text-size: var(--font-size-base);
+  --body-text-weight: var(--font-weight-normal);
+  --body-text-line-height: var(--line-height-relaxed);
+  
+  /* Button Text */
+  --button-text-size: var(--font-size-base);
+  --button-text-weight: var(--font-weight-medium);
+  --button-text-line-height: var(--line-height-normal);
+  
+  /* Link Text */
+  --link-text-size: var(--font-size-base);
+  --link-text-weight: var(--font-weight-medium);
+  --link-text-line-height: var(--line-height-normal);
+}
+
+/* ============================================
+   SPACING SCALE
+   ============================================ */
+
+:root {
+  --spacing-xs: 0.25rem;    /* 4px - Tight spacing, icon padding */
+  --spacing-sm: 0.5rem;     /* 8px - Small gaps, tight groups */
+  --spacing-md: 1rem;       /* 16px - Standard spacing, component padding */
+  --spacing-lg: 1.5rem;     /* 24px - Section spacing, larger gaps */
+  --spacing-xl: 2rem;       /* 32px - Major section spacing */
+  --spacing-2xl: 3rem;      /* 48px - Page-level spacing, hero sections */
+  --spacing-3xl: 4rem;      /* 64px - Extra large spacing */
+  
+  /* Specific Use Cases */
+  --spacing-section: var(--spacing-2xl);     /* Space between major sections */
+  --spacing-component: var(--spacing-lg);   /* Space between components */
+  --spacing-element: var(--spacing-md);     /* Space between elements */
+  --spacing-tight: var(--spacing-sm);       /* Tight spacing */
+}
+
+/* ============================================
+   BREAKPOINTS
+   ============================================ */
+
+:root {
+  /* Breakpoint Values */
+  --breakpoint-mobile: 320px;
+  --breakpoint-mobile-max: 767px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-tablet-max: 1023px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-desktop-max: 1439px;
+  --breakpoint-wide: 1440px;
+  
+  /* Container Max Widths */
+  --container-mobile: 100%;
+  --container-tablet: 100%;
+  --container-desktop: 1200px;
+  --container-wide: 1200px;
+  
+  /* Container Padding */
+  --container-padding-mobile: var(--spacing-md);
+  --container-padding-tablet: var(--spacing-lg);
+  --container-padding-desktop: var(--spacing-xl);
+}
+
+/* ============================================
+   BORDER RADIUS
+   ============================================ */
+
+:root {
+  --radius-none: 0;
+  --radius-sm: 0.25rem;     /* 4px - Small elements */
+  --radius-md: 0.5rem;      /* 8px - Buttons, cards */
+  --radius-lg: 0.75rem;     /* 12px - Large cards */
+  --radius-xl: 1rem;        /* 16px - Extra large elements */
+  --radius-full: 9999px;    /* Fully rounded (pills, circles) */
+  
+  /* Default Radius */
+  --radius-default: var(--radius-md);
+}
+
+/* ============================================
+   SHADOWS
+   ============================================ */
+
+:root {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Specific Use Cases */
+  --shadow-card: var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+  --shadow-button: var(--shadow-sm);
+  --shadow-button-hover: var(--shadow-md);
+  --shadow-header: var(--shadow-sm);
+  --shadow-focus: 0 0 0 2px var(--color-focus);
+}
+
+/* ============================================
+   TRANSITIONS & ANIMATIONS
+   ============================================ */
+
+:root {
+  /* Transition Durations */
+  --duration-instant: 0s;
+  --duration-fast: 0.15s;
+  --duration-normal: 0.2s;
+  --duration-slow: 0.3s;
+  --duration-slower: 0.5s;
+  --duration-slowest: 0.6s;
+  
+  /* Easing Functions */
+  --ease-linear: linear;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Standard Transitions */
+  --transition-fast: var(--duration-fast) var(--ease-in-out);
+  --transition-normal: var(--duration-normal) var(--ease-in-out);
+  --transition-slow: var(--duration-slow) var(--ease-out);
+  --transition-smooth: var(--duration-slower) var(--ease-in-out);
+  
+  /* Specific Transitions */
+  --transition-color: color var(--transition-fast);
+  --transition-bg: background-color var(--transition-fast);
+  --transition-transform: transform var(--transition-normal);
+  --transition-opacity: opacity var(--transition-normal);
+  --transition-shadow: box-shadow var(--transition-normal);
+  --transition-all: all var(--transition-normal);
+}
+
+/* ============================================
+   Z-INDEX SCALE
+   ============================================ */
+
+:root {
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-header: 2000;        /* Header sticky positioning */
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+:root {
+  /* Header */
+  --header-height: 70px;
+  --header-padding: var(--spacing-md);
+  
+  /* Section Spacing */
+  --section-padding-mobile: var(--spacing-xl);
+  --section-padding-tablet: var(--spacing-2xl);
+  --section-padding-desktop: var(--spacing-3xl);
+  
+  /* Card/Component Dimensions */
+  --card-padding: var(--spacing-lg);
+  --card-border-radius: var(--radius-md);
+  --card-min-height: 200px;
+  
+  /* Button Dimensions */
+  --button-min-height: 44px;        /* Minimum touch target */
+  --button-padding-x: var(--spacing-md);
+  --button-padding-y: var(--spacing-sm);
+  --button-border-radius: var(--radius-md);
+  
+  /* Input/Form Dimensions */
+  --input-min-height: 44px;         /* Minimum touch target */
+  --input-padding-x: var(--spacing-md);
+  --input-padding-y: var(--spacing-sm);
+  --input-border-radius: var(--radius-md);
+}
+
+/* ============================================
+   INTERACTIVE STATES
+   ============================================ */
+
+:root {
+  /* Hover Effects */
+  --hover-scale: 1.05;              /* Scale factor for hover */
+  --hover-opacity: 0.9;              /* Opacity for hover */
+  
+  /* Focus States */
+  --focus-outline-width: 2px;
+  --focus-outline-offset: 2px;
+  --focus-outline-color: var(--color-focus);
+  
+  /* Active States */
+  --active-scale: 0.98;              /* Scale factor for active/pressed */
+  --active-opacity: 0.8;             /* Opacity for active */
+  
+  /* Disabled States */
+  --disabled-opacity: 0.5;
+  --disabled-cursor: not-allowed;
+}
+
+/* ============================================
+   ANIMATION KEYFRAMES (Placeholders)
+   ============================================ */
+
+/* These can be defined in component CSS files as needed */
+/* Example usage:
+   @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
+*/
+
+/* ============================================
+   UTILITY VALUES
+   ============================================ */
+
+:root {
+  /* Opacity Values */
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.9;
+  --opacity-active: 0.8;
+  --opacity-overlay: 0.75;
+  
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  
+  /* Max Widths */
+  --max-width-text: 65ch;            /* Optimal reading width */
+  --max-width-container: 1200px;     /* Main container max width */
+  
+  /* Aspect Ratios */
+  --aspect-ratio-square: 1 / 1;
+  --aspect-ratio-video: 16 / 9;
+  --aspect-ratio-card: 4 / 3;
+}
+
+/* ============================================
+   MEDIA QUERY HELPERS
+   ============================================ */
+
+/* These breakpoints can be used in component CSS files:
+   
+   @media (min-width: 768px) { ... }  // Tablet and up
+   @media (min-width: 1024px) { ... } // Desktop and up
+   @media (min-width: 1440px) { ... } // Wide screens
+   
+   Or use CSS custom media queries if supported:
+   @custom-media --tablet (min-width: 768px);
+   @custom-media --desktop (min-width: 1024px);
+   @custom-media --wide (min-width: 1440px);
+*/
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+:root {
+  /* Reduced Motion Support */
+  --motion-reduce: 0.01s;            /* Minimal animation for reduced motion */
+  
+  /* Focus Indicators */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-focus);
+  --focus-ring: var(--focus-ring-width) solid var(--focus-ring-color);
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: var(--motion-reduce);
+    --transition-normal: var(--motion-reduce);
+    --transition-slow: var(--motion-reduce);
+    --transition-smooth: var(--motion-reduce);
+  }
+}
+
+/* ============================================
+   DOCUMENTATION
+   ============================================ */
+
+/**
+ * USAGE EXAMPLES:
+ * 
+ * Color:
+ *   color: var(--color-text-primary);
+ *   background-color: var(--color-bg-primary);
+ * 
+ * Typography:
+ *   font-size: var(--font-size-base);
+ *   font-weight: var(--font-weight-normal);
+ *   line-height: var(--line-height-relaxed);
+ * 
+ * Spacing:
+ *   padding: var(--spacing-md);
+ *   margin-bottom: var(--spacing-lg);
+ * 
+ * Border Radius:
+ *   border-radius: var(--radius-md);
+ * 
+ * Shadows:
+ *   box-shadow: var(--shadow-card);
+ *   box-shadow: var(--shadow-card-hover); /* on hover */
+ * 
+ * Transitions:
+ *   transition: var(--transition-color);
+ *   transition: var(--transition-all);
+ * 
+ * Breakpoints (in component CSS):
+ *   @media (min-width: 768px) { ... }
+ *   @media (min-width: 1024px) { ... }
+ */
+

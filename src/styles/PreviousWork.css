@@ -1,0 +1,273 @@
+/* Previous Work Section - Using Design System Variables */
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   SECTION CONTAINER
+   ============================================ */
+
+.previous-work-section {
+    padding: var(--section-padding-mobile) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .previous-work-section {
+        padding: var(--section-padding-tablet) var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .previous-work-section {
+        padding: var(--section-padding-desktop) var(--spacing-xl);
+    }
+}
+
+/* ============================================
+   SECTION HEADING
+   ============================================ */
+
+.section-heading {
+    font-size: var(--heading-h2-size);
+    font-weight: var(--heading-h2-weight);
+    line-height: var(--heading-h2-line-height);
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+[data-theme="dark"] .section-heading {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+/* ============================================
+   WORK CONTENT LAYOUT
+   ============================================ */
+
+.work-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .work-content {
+        flex-direction: row;
+        gap: var(--spacing-2xl);
+        align-items: flex-start;
+    }
+}
+
+/* ============================================
+   ORGANIZATIONS LIST (LEFT COLUMN)
+   ============================================ */
+
+.organizations-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .organizations-list {
+        width: 35%;
+        max-width: 300px;
+        position: sticky;
+        top: calc(var(--header-height) + var(--spacing-md));
+        align-self: flex-start;
+    }
+}
+
+.organization-item {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-bg-primary);
+    border: var(--border-width-medium) solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition-all);
+    font-family: var(--font-primary);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.organization-item:hover {
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+}
+
+.organization-item:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.organization-item.selected {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-md);
+}
+
+.organization-item.selected:hover {
+    background-color: var(--color-button-primary-hover);
+    transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .organization-item {
+        transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    }
+    
+    .organization-item:hover,
+    .organization-item.selected:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   WORK DETAILS (RIGHT COLUMN)
+   ============================================ */
+
+.work-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.work-details-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-details-content {
+        animation: none;
+    }
+}
+
+.work-title {
+    font-size: var(--heading-h3-size);
+    font-weight: var(--heading-h3-weight);
+    line-height: var(--heading-h3-line-height);
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+[data-theme="dark"] .work-title {
+    color: var(--color-accent); /* Gold in dark mode */
+}
+
+.work-duration {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--spacing-lg) 0;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.work-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.work-bullets li {
+    position: relative;
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--body-text-size);
+    font-weight: var(--body-text-weight);
+    line-height: var(--body-text-line-height);
+    color: var(--color-text-primary);
+}
+
+.work-bullets li::before {
+    content: '•';
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--color-accent);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+}
+
+.work-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   ANNOUNCEMENT (SCREEN READER)
+   ============================================ */
+
+.work-announcement {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+    .organizations-list {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+    }
+
+    .organization-item {
+        width: 100%;
+    }
+
+    .work-details {
+        width: 100%;
+        margin-top: var(--spacing-lg);
+    }
+}
+

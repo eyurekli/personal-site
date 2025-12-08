@@ -1,0 +1,134 @@
+/* Button Component - Using Design System Variables */
+
+/* ============================================
+   BASE BUTTON STYLES
+   ============================================ */
+
+.btn {
+    min-height: var(--button-min-height);
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    border: var(--border-width-medium) solid transparent;
+    font-size: var(--button-text-size);
+    font-weight: var(--button-text-weight);
+    line-height: var(--button-text-line-height);
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: var(--transition-all);
+    box-shadow: var(--shadow-button);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn:focus {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ============================================
+   BUTTON VARIANTS
+   ============================================ */
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-text);
+}
+
+/* Ensure button text is visible in dark mode - force black text on gold background */
+[data-theme="dark"] .btn-primary {
+    color: #000000 !important;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-button-primary-hover);
+    box-shadow: var(--shadow-button-hover);
+    transform: translateY(-2px) scale(var(--hover-scale));
+}
+
+[data-theme="dark"] .btn-primary:hover:not(:disabled) {
+    color: #000000 !important;
+}
+
+.btn-primary:active:not(:disabled) {
+    background-color: var(--color-button-primary-active);
+    transform: translateY(0) scale(var(--active-scale));
+    transition: var(--transition-fast);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: var(--color-button-secondary-bg);
+    color: var(--color-button-secondary-text);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-button-secondary-hover);
+    box-shadow: var(--shadow-button-hover);
+    transform: translateY(-2px) scale(var(--hover-scale));
+}
+
+.btn-secondary:active:not(:disabled) {
+    background-color: var(--color-button-secondary-active);
+    transform: translateY(0) scale(var(--active-scale));
+    transition: var(--transition-fast);
+}
+
+/* ============================================
+   BUTTON SIZES
+   ============================================ */
+
+.btn-sm {
+    min-height: 36px;
+    padding: calc(var(--button-padding-y) * 0.75) calc(var(--button-padding-x) * 0.75);
+    font-size: var(--font-size-sm);
+}
+
+.btn-md {
+    /* Default size - uses base button dimensions */
+}
+
+.btn-lg {
+    min-height: 52px;
+    padding: calc(var(--button-padding-y) * 1.25) calc(var(--button-padding-x) * 1.25);
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.btn:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: box-shadow var(--transition-fast);
+    }
+    
+    .btn:hover:not(:disabled) {
+        transform: none;
+    }
+    
+    .btn:active:not(:disabled) {
+        transform: none;
+    }
+}
+
